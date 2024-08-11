@@ -19,7 +19,7 @@ public class HealthController implements HealthIndicator {
     @GetMapping("/health")
     public Health health() {
         return Health.up()
-                .status("bot working")
+                .status("bot working v2.0")
                 .build();
     }
 
