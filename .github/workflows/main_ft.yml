@@ -44,7 +44,7 @@ jobs:
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
         with:
-          name: java-app
+          name: bot-0.0.1-SNAPSHOT
       
       - name: Login to Azure
         uses: azure/login@v2
