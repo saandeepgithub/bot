@@ -30,7 +30,7 @@ jobs:
         shell: pwsh
         run: |
           pushd './${{ env.PACKAGE_DIRECTORY }}'
-          mvn clean package
+          gradle clean build
           popd
       - name: 'Run Azure Functions Action'
         uses: Azure/functions-action@v1
@@ -40,4 +40,4 @@ jobs:
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B073EF51D44D421D946CDEC91BB871AD }}
           package: '${{ env.PACKAGE_DIRECTORY }}'
-          respect-pom-xml: true
+          respect-pom-xml: false
